@@ -6,26 +6,28 @@ import { CheeseSelect } from "../pages/CheeseSelect";
 import { SauceSelect } from "../pages/SauceSelect";
 import { Result } from "../pages/Result";
 
+const BASE_URL = import.meta.env.BASE_URL;
+
 export const router = createBrowserRouter([
   {
-    path: "/",
+    path: `${BASE_URL}/`,
     element: <App />,
     children: [
-      { path: "/", element: <MenusSelect /> },
+      { path: `${BASE_URL}/`, element: <MenusSelect /> },
       {
-        path: "/bread",
+        path: `${BASE_URL}/bread`,
         element: <BreadSelect />,
       },
       {
-        path: "/cheese",
+        path: `${BASE_URL}/cheese`,
         element: <CheeseSelect />,
       },
       {
-        path: "/sauce",
+        path: `${BASE_URL}/sauce`,
         element: <SauceSelect />,
       },
       {
-        path: "/result",
+        path: `${BASE_URL}/result`,
         element: <Result />,
       },
     ],
