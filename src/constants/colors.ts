@@ -1,4 +1,4 @@
-const colors = {
+export const colors = {
   grey100: "#f2f4f6",
   grey300: "#d1d6db",
   grey700: "#4e5968",
@@ -10,5 +10,3 @@ const colors = {
   green100: "#009132",
   blue400: "#4593fc",
 };
-
-export default colors;

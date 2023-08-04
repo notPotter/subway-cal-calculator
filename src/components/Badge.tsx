@@ -1,13 +1,13 @@
 import { HTMLAttributes, ReactNode } from "react";
 import { css, styled } from "styled-components";
-import colors from "../constants/colors";
+import { colors } from "../constants/colors";
 
 interface Props extends HTMLAttributes<HTMLSpanElement> {
   children: ReactNode;
   selected?: boolean;
 }
 
-function Badge({ children, selected, ...rest }: Props) {
+export function Badge({ children, selected, ...rest }: Props) {
   return (
     <Container aria-label="badge" selected={selected ? selected : false} {...rest}>
       {children}
@@ -33,5 +33,3 @@ const Container = styled.span<{ selected: boolean }>`
       background-color: ${colors.green100};
     `}
 `;
-
-export default Badge;
