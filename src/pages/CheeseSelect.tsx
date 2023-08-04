@@ -2,17 +2,17 @@ import { styled } from "styled-components";
 import { BigInput } from "../components/BigInput";
 import colors from "../constants/colors";
 import Badge from "../components/Badge";
-import { MENUS } from "../constants/menus";
+import { CHEESES } from "../constants/menus";
 import { useState } from "react";
 import { useRecoilState } from "recoil";
-import { menuState } from "../atoms/atoms";
+import { cheeseState } from "../atoms/atoms";
 import { food } from "../types/types";
 import { useNavigate } from "react-router-dom";
 import { Header } from "../components/Header";
 
-export function MenusSelect() {
-  const [menuValue, setMenuValue] = useState<string>("");
-  const [menu, setMenu] = useRecoilState(menuState);
+export function CheeseSelect() {
+  const [cheeseValue, setMenuValue] = useState<string>("");
+  const [cheese, setMenu] = useRecoilState(cheeseState);
   const navigate = useNavigate();
 
   const handleChangeMenu = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -22,29 +22,29 @@ export function MenusSelect() {
   const handleClickMenu = (selectedMenu: food) => {
     setMenu(selectedMenu);
     setMenuValue("");
-    navigate("/bread");
+    navigate("/sauce");
   };
 
   return (
     <>
       <Header />
       <S.Container>
-        <S.Title>메뉴를 골라주세요</S.Title>
+        <S.Title>치즈를 골라주세요</S.Title>
         <BigInput
           placeholder="메뉴 이름 입력"
-          value={menuValue}
+          value={cheeseValue}
           onChange={handleChangeMenu}
         />
         <S.BadgeContainer>
-          {Object.values(MENUS)
-            .filter((menus) => menus.name.includes(menuValue))
-            .map((menus) => (
+          {Object.values(CHEESES)
+            .filter((cheeses) => cheeses.name.includes(cheeseValue))
+            .map((cheeses) => (
               <Badge
-                key={menus.name}
-                selected={menus.name === menu.name}
-                onClick={() => handleClickMenu(menus)}
+                key={cheeses.name}
+                selected={cheese.name === cheeses.name}
+                onClick={() => handleClickMenu(cheeses)}
               >
-                {menus.name}
+                {cheeses.name}
               </Badge>
             ))}
         </S.BadgeContainer>

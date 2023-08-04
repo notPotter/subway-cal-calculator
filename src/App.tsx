@@ -1,11 +1,9 @@
 import { Outlet } from "react-router-dom";
 import { styled } from "styled-components";
-import { Header } from "./components/Header";
 
 function App() {
   return (
     <S.App>
-      <Header />
       <Outlet />
     </S.App>
   );
@@ -20,7 +18,7 @@ const S = {
     justify-content: center;
     width: 100%;
     height: 100%;
-    padding: 0 20px;
+    padding: 0 12px;
   `,
 };
 

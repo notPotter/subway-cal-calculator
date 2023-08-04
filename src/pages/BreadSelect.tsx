@@ -1,50 +1,50 @@
 import { styled } from "styled-components";
-import { BigInput } from "../components/BigInput";
 import colors from "../constants/colors";
-import Badge from "../components/Badge";
-import { MENUS } from "../constants/menus";
-import { useState } from "react";
 import { useRecoilState } from "recoil";
-import { menuState } from "../atoms/atoms";
-import { food } from "../types/types";
+import { breadState } from "../atoms/atoms";
+import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { BREADS } from "../constants/menus";
+import Badge from "../components/Badge";
+import { BigInput } from "../components/BigInput";
+import { food } from "../types/types";
 import { Header } from "../components/Header";
 
-export function MenusSelect() {
-  const [menuValue, setMenuValue] = useState<string>("");
-  const [menu, setMenu] = useRecoilState(menuState);
+export function BreadSelect() {
+  const [breadValue, setBreadValue] = useState("");
+  const [bread, setBread] = useRecoilState(breadState);
   const navigate = useNavigate();
 
   const handleChangeMenu = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setMenuValue(e.target.value);
+    setBreadValue(e.target.value);
   };
 
   const handleClickMenu = (selectedMenu: food) => {
-    setMenu(selectedMenu);
-    setMenuValue("");
-    navigate("/bread");
+    setBread(selectedMenu);
+    setBreadValue("");
+    navigate("/cheese");
   };
 
   return (
     <>
       <Header />
       <S.Container>
-        <S.Title>메뉴를 골라주세요</S.Title>
+        <S.Title>빵을 골라주세요</S.Title>
         <BigInput
-          placeholder="메뉴 이름 입력"
-          value={menuValue}
+          placeholder="빵 이름 입력"
+          value={breadValue}
           onChange={handleChangeMenu}
         />
         <S.BadgeContainer>
-          {Object.values(MENUS)
-            .filter((menus) => menus.name.includes(menuValue))
-            .map((menus) => (
+          {Object.values(BREADS)
+            .filter((breads) => breads.name.includes(breadValue))
+            .map((breads) => (
               <Badge
-                key={menus.name}
-                selected={menus.name === menu.name}
-                onClick={() => handleClickMenu(menus)}
+                key={breads.name}
+                selected={bread.name === breads.name}
+                onClick={() => handleClickMenu(breads)}
               >
-                {menus.name}
+                {breads.name}
               </Badge>
             ))}
         </S.BadgeContainer>
