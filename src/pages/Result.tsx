@@ -3,7 +3,7 @@ import { breadState, cheeseState, menuState, sauceState } from "../atoms/atoms";
 import { styled } from "styled-components";
 import colors from "../constants/colors";
 import logo from "../assets/subway_logo.png";
-import { Routes, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { ROUTE_PATH } from "../constants/route";
 
 const EMPTY_VALUE = {
