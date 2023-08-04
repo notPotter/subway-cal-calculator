@@ -1,15 +1,14 @@
-import { styled } from "styled-components";
 import { BigInput } from "../components/BigInput";
-import colors from "../constants/colors";
-import Badge from "../components/Badge";
+import { Badge } from "../components/Badge";
 import { CHEESES } from "../constants/menus";
 import { useState } from "react";
 import { useRecoilState } from "recoil";
 import { cheeseState } from "../atoms/atoms";
-import { food } from "../types/types";
+import { Food } from "../types/types";
 import { useNavigate } from "react-router-dom";
 import { Header } from "../components/Header";
 import { ROUTE_PATH } from "../constants/route";
+import { BadgeContainer, Container, Title } from "../styles/styles";
 
 export function CheeseSelect() {
   const [cheeseValue, setMenuValue] = useState("");
@@ -20,7 +19,7 @@ export function CheeseSelect() {
     setMenuValue(e.target.value);
   };
 
-  const handleClickMenu = (selectedMenu: food) => {
+  const handleClickMenu = (selectedMenu: Food) => {
     setMenu(selectedMenu);
     setMenuValue("");
     navigate(ROUTE_PATH.SAUCE);
@@ -29,10 +28,10 @@ export function CheeseSelect() {
   return (
     <>
       <Header />
-      <S.Container>
-        <S.Title>치즈를 골라주세요</S.Title>
+      <Container>
+        <Title>치즈를 골라주세요</Title>
         <BigInput placeholder="치즈 이름 입력" value={cheeseValue} onChange={handleChangeMenu} />
-        <S.BadgeContainer>
+        <BadgeContainer>
           {Object.values(CHEESES)
             .filter((cheeses) => cheeses.name.includes(cheeseValue))
             .map((cheeses) => (
@@ -40,33 +39,8 @@ export function CheeseSelect() {
                 {cheeses.name}
               </Badge>
             ))}
-        </S.BadgeContainer>
-      </S.Container>
+        </BadgeContainer>
+      </Container>
     </>
   );
 }
-
-const S = {
-  Title: styled.h1`
-    margin-bottom: 40px;
-    font-size: 26px;
-    line-height: 35px;
-    word-break: keep-all;
-    white-space: pre-line;
-    font-weight: bold;
-    color: ${colors.grey900};
-  `,
-
-  Container: styled.div`
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    gap: 20px;
-  `,
-
-  BadgeContainer: styled.div`
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-  `,
-};

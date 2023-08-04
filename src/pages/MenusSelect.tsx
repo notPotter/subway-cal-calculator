@@ -1,15 +1,14 @@
-import { styled } from "styled-components";
 import { BigInput } from "../components/BigInput";
-import colors from "../constants/colors";
-import Badge from "../components/Badge";
+import { Badge } from "../components/Badge";
 import { MENUS } from "../constants/menus";
 import { useState } from "react";
 import { useRecoilState } from "recoil";
 import { menuState } from "../atoms/atoms";
-import { food } from "../types/types";
+import { Food } from "../types/types";
 import { useNavigate } from "react-router-dom";
 import { Header } from "../components/Header";
 import { ROUTE_PATH } from "../constants/route";
+import { BadgeContainer, Container, Title } from "../styles/styles";
 
 export function MenusSelect() {
   const [menuValue, setMenuValue] = useState("");
@@ -20,7 +19,7 @@ export function MenusSelect() {
     setMenuValue(e.target.value);
   };
 
-  const handleClickMenu = (selectedMenu: food) => {
+  const handleClickMenu = (selectedMenu: Food) => {
     setMenu(selectedMenu);
     setMenuValue("");
     navigate(ROUTE_PATH.BREAD);
@@ -29,10 +28,10 @@ export function MenusSelect() {
   return (
     <>
       <Header />
-      <S.Container>
-        <S.Title>메뉴를 골라주세요</S.Title>
+      <Container>
+        <Title>메뉴를 골라주세요</Title>
         <BigInput placeholder="메뉴 이름 입력" value={menuValue} onChange={handleChangeMenu} />
-        <S.BadgeContainer>
+        <BadgeContainer>
           {Object.values(MENUS)
             .filter((menus) => menus.name.includes(menuValue))
             .map((menus) => (
@@ -40,33 +39,8 @@ export function MenusSelect() {
                 {menus.name}
               </Badge>
             ))}
-        </S.BadgeContainer>
-      </S.Container>
+        </BadgeContainer>
+      </Container>
     </>
   );
 }
-
-const S = {
-  Title: styled.h1`
-    margin-bottom: 40px;
-    font-size: 26px;
-    line-height: 35px;
-    word-break: keep-all;
-    white-space: pre-line;
-    font-weight: bold;
-    color: ${colors.grey900};
-  `,
-
-  Container: styled.div`
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    gap: 20px;
-  `,
-
-  BadgeContainer: styled.div`
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-  `,
-};
