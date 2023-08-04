@@ -31,20 +31,12 @@ export function MenusSelect() {
       <Header />
       <S.Container>
         <S.Title>메뉴를 골라주세요</S.Title>
-        <BigInput
-          placeholder="메뉴 이름 입력"
-          value={menuValue}
-          onChange={handleChangeMenu}
-        />
+        <BigInput placeholder="메뉴 이름 입력" value={menuValue} onChange={handleChangeMenu} />
         <S.BadgeContainer>
           {Object.values(MENUS)
             .filter((menus) => menus.name.includes(menuValue))
             .map((menus) => (
-              <Badge
-                key={menus.name}
-                selected={menus.name === menu.name}
-                onClick={() => handleClickMenu(menus)}
-              >
+              <Badge key={menus.name} selected={menus.name === menu.name} onClick={() => handleClickMenu(menus)}>
                 {menus.name}
               </Badge>
             ))}

@@ -32,9 +32,7 @@ export function SauceSelect() {
     }
 
     if (sauceNames.includes(selectedMenu.name)) {
-      const newSauce = sauce.filter(
-        (sauce) => sauce.name !== selectedMenu.name
-      );
+      const newSauce = sauce.filter((sauce) => sauce.name !== selectedMenu.name);
       setSauce(newSauce);
       setSauceValue("");
 
@@ -50,30 +48,21 @@ export function SauceSelect() {
       <Header />
       <S.Container>
         <S.Title>소스를 골라주세요</S.Title>
-        <BigInput
-          placeholder="소스 이름 입력"
-          value={sauceValue}
-          onChange={handleChangeMenu}
-        />
+        <BigInput placeholder="소스 이름 입력" value={sauceValue} onChange={handleChangeMenu} />
         <S.BadgeContainer>
           {Object.values(SAUCES)
             .filter((sauces) => sauces.name.includes(sauceValue))
             .map((sauces) => (
               <Badge
                 key={sauces.name}
-                selected={sauce
-                  .map((sauce) => sauce.name)
-                  .includes(sauces.name)}
+                selected={sauce.map((sauce) => sauce.name).includes(sauces.name)}
                 onClick={() => handleClickMenu(sauces)}
               >
                 {sauces.name}
               </Badge>
             ))}
         </S.BadgeContainer>
-        <S.Button
-          disabled={sauce.length === 0}
-          onClick={() => navigate(ROUTE_PATH.RESULT)}
-        >
+        <S.Button disabled={sauce.length === 0} onClick={() => navigate(ROUTE_PATH.RESULT)}>
           확인
         </S.Button>
       </S.Container>

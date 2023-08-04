@@ -9,9 +9,7 @@ interface Props extends HTMLAttributes<HTMLInputElement> {
 }
 
 export function BigInput({ placeholder, value, onChange }: Props) {
-  return (
-    <S.BigInput placeholder={placeholder} value={value} onChange={onChange} />
-  );
+  return <S.BigInput placeholder={placeholder} value={value} onChange={onChange} />;
 }
 
 const S = {

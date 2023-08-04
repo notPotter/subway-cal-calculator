@@ -9,11 +9,7 @@ interface Props extends HTMLAttributes<HTMLSpanElement> {
 
 function Badge({ children, selected, ...rest }: Props) {
   return (
-    <Container
-      aria-label="badge"
-      selected={selected ? selected : false}
-      {...rest}
-    >
+    <Container aria-label="badge" selected={selected ? selected : false} {...rest}>
       {children}
     </Container>
   );

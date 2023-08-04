@@ -22,31 +22,11 @@ export function Result() {
   const [sauce, setSauce] = useRecoilState(sauceState);
   const sauceNames = Object.values(sauce).map((sauces) => sauces.name);
   const navigate = useNavigate();
-  const kcal =
-    menu.kcal +
-    bread.kcal +
-    cheese.kcal +
-    sauce.reduce((acc, cur) => acc + cur.kcal, 0);
-  const protein =
-    menu.protein +
-    bread.protein +
-    cheese.protein +
-    sauce.reduce((acc, cur) => acc + cur.protein, 0);
-  const saturatedFat =
-    menu.saturatedFat +
-    bread.saturatedFat +
-    cheese.saturatedFat +
-    sauce.reduce((acc, cur) => acc + cur.saturatedFat, 0);
-  const sugars =
-    menu.sugars +
-    bread.sugars +
-    cheese.sugars +
-    sauce.reduce((acc, cur) => acc + cur.sugars, 0);
-  const sodium =
-    menu.sodium +
-    bread.sodium +
-    cheese.sodium +
-    sauce.reduce((acc, cur) => acc + cur.sodium, 0);
+  const kcal = menu.kcal + bread.kcal + cheese.kcal + sauce.reduce((acc, cur) => acc + cur.kcal, 0);
+  const protein = menu.protein + bread.protein + cheese.protein + sauce.reduce((acc, cur) => acc + cur.protein, 0);
+  const saturatedFat = menu.saturatedFat + bread.saturatedFat + cheese.saturatedFat + sauce.reduce((acc, cur) => acc + cur.saturatedFat, 0);
+  const sugars = menu.sugars + bread.sugars + cheese.sugars + sauce.reduce((acc, cur) => acc + cur.sugars, 0);
+  const sodium = menu.sodium + bread.sodium + cheese.sodium + sauce.reduce((acc, cur) => acc + cur.sodium, 0);
 
   const handleClickHome = () => {
     setMenu(EMPTY_VALUE);

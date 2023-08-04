@@ -31,20 +31,12 @@ export function CheeseSelect() {
       <Header />
       <S.Container>
         <S.Title>치즈를 골라주세요</S.Title>
-        <BigInput
-          placeholder="치즈 이름 입력"
-          value={cheeseValue}
-          onChange={handleChangeMenu}
-        />
+        <BigInput placeholder="치즈 이름 입력" value={cheeseValue} onChange={handleChangeMenu} />
         <S.BadgeContainer>
           {Object.values(CHEESES)
             .filter((cheeses) => cheeses.name.includes(cheeseValue))
             .map((cheeses) => (
-              <Badge
-                key={cheeses.name}
-                selected={cheese.name === cheeses.name}
-                onClick={() => handleClickMenu(cheeses)}
-              >
+              <Badge key={cheeses.name} selected={cheese.name === cheeses.name} onClick={() => handleClickMenu(cheeses)}>
                 {cheeses.name}
               </Badge>
             ))}
