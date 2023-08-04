@@ -247,4 +247,4 @@ Error generating stack: `+i.message+`
     white-space: pre-line;
     font-weight: bold;
     color: ${Ye.yellow100};
-  `},d2=KT([{path:"/",element:V.jsx(i2,{}),children:[{path:"/",element:V.jsx(o2,{})},{path:"/bread",element:V.jsx(a2,{})},{path:"/cheese",element:V.jsx(s2,{})},{path:"/sauce",element:V.jsx(u2,{})},{path:"/result",element:V.jsx(c2,{})}]}]);uu.createRoot(document.getElementById("root")).render(V.jsx(OC,{children:V.jsx(VT,{router:d2})}));
+  `},d2="/subway-cal-calculator/",f2=KT([{path:`${d2}/`,element:V.jsx(i2,{}),children:[{path:"/",element:V.jsx(o2,{})},{path:"/bread",element:V.jsx(a2,{})},{path:"/cheese",element:V.jsx(s2,{})},{path:"/sauce",element:V.jsx(u2,{})},{path:"/result",element:V.jsx(c2,{})}]}]);uu.createRoot(document.getElementById("root")).render(V.jsx(OC,{children:V.jsx(VT,{router:f2})}));
