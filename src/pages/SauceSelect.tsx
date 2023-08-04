@@ -12,7 +12,7 @@ import { Header } from "../components/Header";
 import { ROUTE_PATH } from "../constants/route";
 
 export function SauceSelect() {
-  const [sauceValue, setSauceValue] = useState<string>("");
+  const [sauceValue, setSauceValue] = useState("");
   const [sauce, setSauce] = useRecoilState(sauceState);
   const navigate = useNavigate();
 
@@ -24,6 +24,13 @@ export function SauceSelect() {
     const sauceNames = Object.values(sauce).map((sauces) => sauces.name);
     const newSauce = [...sauce, selectedMenu];
 
+    if (selectedMenu.name === "선택안함") {
+      setSauce([selectedMenu]);
+      setSauceValue("");
+
+      return;
+    }
+
     if (sauceNames.includes(selectedMenu.name)) {
       const newSauce = sauce.filter(
         (sauce) => sauce.name !== selectedMenu.name
@@ -34,7 +41,7 @@ export function SauceSelect() {
       return;
     }
 
-    setSauce(newSauce);
+    setSauce(newSauce.filter((sauce) => sauce.name !== "선택안함"));
     setSauceValue("");
   };
 

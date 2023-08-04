@@ -221,6 +221,14 @@ export const CHEESES = {
     sugars: 0.2,
     sodium: 82.3,
   },
+  NONE: {
+    name: "선택안함",
+    kcal: 0,
+    protein: 0,
+    saturatedFat: 0,
+    sugars: 0,
+    sodium: 0,
+  },
 };
 
 export const SAUCES = {
@@ -317,6 +325,30 @@ export const SAUCES = {
     kcal: 124,
     protein: 0,
     saturatedFat: 2.1,
+    sugars: 0,
+    sodium: 0,
+  },
+  PEPPER: {
+    name: "후추",
+    kcal: 0,
+    protein: 0,
+    saturatedFat: 0,
+    sugars: 0,
+    sodium: 0,
+  },
+  SALT: {
+    name: "소금",
+    kcal: 0,
+    protein: 0,
+    saturatedFat: 0,
+    sugars: 0,
+    sodium: 0,
+  },
+  NONE: {
+    name: "선택안함",
+    kcal: 0,
+    protein: 0,
+    saturatedFat: 0,
     sugars: 0,
     sodium: 0,
   },

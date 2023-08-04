@@ -26,8 +26,5 @@ const S = {
     outline: none;
     border: 0 none;
     border-bottom: 2px solid ${colors.grey300};
-    :focus {
-      border-bottom-color: ${colors.blue400};
-    }
   `,
 };

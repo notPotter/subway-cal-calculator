@@ -12,7 +12,7 @@ import { Header } from "../components/Header";
 import { ROUTE_PATH } from "../constants/route";
 
 export function MenusSelect() {
-  const [menuValue, setMenuValue] = useState<string>("");
+  const [menuValue, setMenuValue] = useState("");
   const [menu, setMenu] = useRecoilState(menuState);
   const navigate = useNavigate();
 

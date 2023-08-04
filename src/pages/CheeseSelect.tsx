@@ -12,7 +12,7 @@ import { Header } from "../components/Header";
 import { ROUTE_PATH } from "../constants/route";
 
 export function CheeseSelect() {
-  const [cheeseValue, setMenuValue] = useState<string>("");
+  const [cheeseValue, setMenuValue] = useState("");
   const [cheese, setMenu] = useRecoilState(cheeseState);
   const navigate = useNavigate();
 
@@ -32,7 +32,7 @@ export function CheeseSelect() {
       <S.Container>
         <S.Title>치즈를 골라주세요</S.Title>
         <BigInput
-          placeholder="메뉴 이름 입력"
+          placeholder="치즈 이름 입력"
           value={cheeseValue}
           onChange={handleChangeMenu}
         />
