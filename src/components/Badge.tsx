@@ -25,6 +25,7 @@ const Container = styled.span<{ selected: boolean }>`
   font-weight: bold;
   color: ${colors.grey700};
   background-color: ${colors.greyOpacity200};
+  cursor: pointer;
 
   ${({ selected }) =>
     selected &&

@@ -33,7 +33,7 @@ export function Result() {
     setBread(EMPTY_VALUE);
     setCheese(EMPTY_VALUE);
     setSauce([]);
-    navigate(ROUTE_PATH.HOME);
+    navigate(ROUTE_PATH.HOME, { replace: true });
   };
 
   return (

@@ -1,5 +1,5 @@
 import { styled } from "styled-components";
-import colors from "../constants/colors";
+import { colors } from "../constants/colors";
 import { ChangeEvent, HTMLAttributes } from "react";
 
 interface Props extends HTMLAttributes<HTMLInputElement> {

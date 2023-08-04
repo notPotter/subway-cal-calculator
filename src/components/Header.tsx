@@ -5,10 +5,17 @@ import { useNavigate } from "react-router-dom";
 
 export function Header() {
   const navigate = useNavigate();
+  const location = window.location.pathname;
 
   return (
     <S.Header>
-      <S.Image src={arrowLeft} onClick={() => navigate(-1)} />
+      <S.Image
+        src={arrowLeft}
+        onClick={() => {
+          if (location === "/") return;
+          navigate(-1);
+        }}
+      />
       <S.Image src={logo} />
     </S.Header>
   );

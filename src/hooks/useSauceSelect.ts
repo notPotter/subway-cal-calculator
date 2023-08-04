@@ -15,8 +15,7 @@ export function useSauceSelect() {
   };
 
   const handleClickMenu = (selectedMenu: Food) => {
-    handleSelectedMenuNone(selectedMenu);
-    handleUnSelectMenu(selectedMenu);
+    if (handleSelectedMenuNone(selectedMenu) || handleUnSelectMenu(selectedMenu)) return;
     handleSelectMenu(selectedMenu);
   };
 
@@ -24,6 +23,8 @@ export function useSauceSelect() {
     if (selectedMenu.name === "선택안함") {
       setSauce([selectedMenu]);
       setSauceValue("");
+
+      return true;
     }
   };
 
@@ -34,6 +35,8 @@ export function useSauceSelect() {
     if (sauceNames.includes(selectedMenu.name)) {
       setSauce(newSauce);
       setSauceValue("");
+
+      return true;
     }
   };
 
