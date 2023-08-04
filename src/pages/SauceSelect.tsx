@@ -9,6 +9,7 @@ import { sauceState } from "../atoms/atoms";
 import { food } from "../types/types";
 import { useNavigate } from "react-router-dom";
 import { Header } from "../components/Header";
+import { ROUTE_PATH } from "../constants/route";
 
 export function SauceSelect() {
   const [sauceValue, setSauceValue] = useState<string>("");
@@ -64,7 +65,7 @@ export function SauceSelect() {
         </S.BadgeContainer>
         <S.Button
           disabled={sauce.length === 0}
-          onClick={() => navigate("/result")}
+          onClick={() => navigate(ROUTE_PATH.RESULT)}
         >
           확인
         </S.Button>

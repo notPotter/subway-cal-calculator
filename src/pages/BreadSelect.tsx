@@ -9,6 +9,7 @@ import Badge from "../components/Badge";
 import { BigInput } from "../components/BigInput";
 import { food } from "../types/types";
 import { Header } from "../components/Header";
+import { ROUTE_PATH } from "../constants/route";
 
 export function BreadSelect() {
   const [breadValue, setBreadValue] = useState("");
@@ -22,7 +23,7 @@ export function BreadSelect() {
   const handleClickMenu = (selectedMenu: food) => {
     setBread(selectedMenu);
     setBreadValue("");
-    navigate("/cheese");
+    navigate(ROUTE_PATH.CHEESE);
   };
 
   return (

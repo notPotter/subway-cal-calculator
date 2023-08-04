@@ -3,7 +3,8 @@ import { breadState, cheeseState, menuState, sauceState } from "../atoms/atoms";
 import { styled } from "styled-components";
 import colors from "../constants/colors";
 import logo from "../assets/subway_logo.png";
-import { useNavigate } from "react-router-dom";
+import { Routes, useNavigate } from "react-router-dom";
+import { ROUTE_PATH } from "../constants/route";
 
 const EMPTY_VALUE = {
   name: "",
@@ -52,7 +53,7 @@ export function Result() {
     setBread(EMPTY_VALUE);
     setCheese(EMPTY_VALUE);
     setSauce([]);
-    navigate("/");
+    navigate(ROUTE_PATH.HOME);
   };
 
   return (

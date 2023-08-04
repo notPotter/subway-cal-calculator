@@ -9,6 +9,7 @@ import { cheeseState } from "../atoms/atoms";
 import { food } from "../types/types";
 import { useNavigate } from "react-router-dom";
 import { Header } from "../components/Header";
+import { ROUTE_PATH } from "../constants/route";
 
 export function CheeseSelect() {
   const [cheeseValue, setMenuValue] = useState<string>("");
@@ -22,7 +23,7 @@ export function CheeseSelect() {
   const handleClickMenu = (selectedMenu: food) => {
     setMenu(selectedMenu);
     setMenuValue("");
-    navigate("/sauce");
+    navigate(ROUTE_PATH.SAUCE);
   };
 
   return (
