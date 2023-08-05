@@ -176,6 +176,7 @@ Error generating stack: `+i.message+`
     width: 20px;
   `,MenuImage:Ie.img`
     width: 200px;
+    margin-top: 20px;
     margin-bottom: -10px;
   `,Title:Ie.p`
     display: flex;
@@ -198,7 +199,7 @@ Error generating stack: `+i.message+`
     display: flex;
     flex-wrap: wrap;
     gap: 5px;
-    margin-top: 20px;
+    margin-top: 40px;
     justify-content: flex-start;
   `,Badge:Ie(Fs)`
     border-radius: 20px;
