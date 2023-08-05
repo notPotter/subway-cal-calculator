@@ -2,6 +2,7 @@ import { styled } from "styled-components";
 import logo from "../assets/subway_logo.png";
 import arrowLeft from "../assets/arrow_left.png";
 import { useNavigate } from "react-router-dom";
+import { BASE_URL } from "../constants/route";
 
 export function Header() {
   const navigate = useNavigate();
@@ -12,7 +13,7 @@ export function Header() {
       <S.Image
         src={arrowLeft}
         onClick={() => {
-          if (location === "/") return;
+          if (location === BASE_URL) return;
           navigate(-1);
         }}
       />
