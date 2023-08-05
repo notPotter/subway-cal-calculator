@@ -6,3 +6,8 @@ export interface Food {
   sugars: number;
   sodium: number;
 }
+
+export interface Menu extends Food {
+  img: string;
+  description: string;
+}

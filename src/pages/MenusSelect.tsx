@@ -4,7 +4,7 @@ import { MENUS } from "../constants/menus";
 import { useState } from "react";
 import { useRecoilState } from "recoil";
 import { menuState } from "../atoms/atoms";
-import { Food } from "../types/types";
+import { Menu } from "../types/types";
 import { useNavigate } from "react-router-dom";
 import { Header } from "../components/Header";
 import { ROUTE_PATH } from "../constants/route";
@@ -23,7 +23,7 @@ export function MenusSelect() {
     setMenuValue(e.target.value);
   };
 
-  const handleClickMenu = (selectedMenu: Food) => {
+  const handleClickMenu = (selectedMenu: Menu) => {
     setMenu(selectedMenu);
     setMenuValue("");
     navigate(ROUTE_PATH.BREAD);

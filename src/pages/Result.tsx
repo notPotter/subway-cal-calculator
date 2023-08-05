@@ -4,7 +4,11 @@ import { styled } from "styled-components";
 import { colors } from "../constants/colors";
 import { useNavigate } from "react-router-dom";
 import { ROUTE_PATH } from "../constants/route";
-import logo from "../assets/subway_logo.png";
+import { Badge } from "../components/Badge";
+import Logo from "../assets/subway_logo.png";
+import Bread from "../assets/bread.png";
+import Cheese from "../assets/cheese.png";
+import Sauce from "../assets/sauce.png";
 
 const EMPTY_VALUE = {
   name: "",
@@ -29,50 +33,71 @@ export function Result() {
   const sodium = menu.sodium + bread.sodium + cheese.sodium + sauce.reduce((acc, cur) => acc + cur.sodium, 0);
 
   const handleClickHome = () => {
-    setMenu(EMPTY_VALUE);
+    setMenu({ ...EMPTY_VALUE, img: "", description: "" });
     setBread(EMPTY_VALUE);
     setCheese(EMPTY_VALUE);
     setSauce([]);
     navigate(ROUTE_PATH.HOME, { replace: true });
   };
 
+  console.log(menu);
+
   return (
     <S.Container>
       <S.Header>
-        <S.Image src={logo} onClick={handleClickHome} />
+        <S.Image src={Logo} onClick={handleClickHome} />
       </S.Header>
-      <S.Title>
-        메뉴는<S.name>{menu.name}</S.name>
-      </S.Title>
-      <S.Title>
-        빵은 <S.yellowName>{bread.name}</S.yellowName>
-      </S.Title>
-      <S.Title>
-        치즈는 <S.name>{cheese.name}</S.name>
-      </S.Title>
-      <S.Title>
-        소스는
-        <S.yellowName>{sauceNames.join(", ")}</S.yellowName>
-      </S.Title>
+
+      <S.MenuImage src={menu.img} />
+      <S.Title>{menu.name}</S.Title>
+      <S.Description>{menu.description}</S.Description>
+
+      <S.BadgeContainer>
+        <S.Badge>
+          <S.Image src={Bread} />
+          {bread.name}
+        </S.Badge>
+        <S.Badge>
+          <S.Image src={Cheese} />
+          {cheese.name}
+        </S.Badge>
+        {sauceNames.map((sauceName) => (
+          <S.Badge>
+            <S.Image src={Sauce} />
+            {sauceName}
+          </S.Badge>
+        ))}
+      </S.BadgeContainer>
 
       <S.ResultContainer>
-        <S.Title>
-          총 칼로리는 <S.name>{Math.floor(kcal)}</S.name>kcal
-        </S.Title>
-        <S.Title>
-          단백질은 <S.yellowName>{Math.floor(protein)}</S.yellowName>g
-        </S.Title>
-        <S.Title>
-          포화지방은 <S.name>{Math.floor(saturatedFat)}</S.name>g
-        </S.Title>
-        <S.Title>
-          당류는 <S.yellowName>{Math.floor(sugars)}</S.yellowName>g
-        </S.Title>
-        <S.Title>
-          나트륨은 <S.name>{Math.floor(sodium)}</S.name>mg
-        </S.Title>
-        <S.Title>입니다!</S.Title>
+        <S.KcalInfo style={{ marginBottom: 20 }}>{Math.floor(kcal)}kcal</S.KcalInfo>
+        <S.ResultBox>
+          <S.Description>단백질</S.Description>
+          <S.KcalInfo>{Math.floor(protein)}g</S.KcalInfo>
+        </S.ResultBox>
+        <S.ResultBox>
+          <S.Description>포화지방</S.Description>
+          <S.KcalInfo>{Math.floor(saturatedFat)}g</S.KcalInfo>
+        </S.ResultBox>
+        <S.ResultBox>
+          <S.Description>당류</S.Description>
+          <S.KcalInfo>{Math.floor(sugars)}g</S.KcalInfo>
+        </S.ResultBox>
+        <S.ResultBox>
+          <S.Description>나트륨</S.Description>
+          <S.KcalInfo>{Math.floor(sodium)}mg</S.KcalInfo>
+        </S.ResultBox>
       </S.ResultContainer>
+
+      {/* <S.ResultContainer>
+        <S.Title>칼로리 - {Math.floor(kcal)}kcal</S.Title>
+        <ul>
+          <li>단백질 - {Math.floor(protein)}g</li>
+          <li>포화지방 - {Math.floor(saturatedFat)}g</li>
+          <li>당류 - {Math.floor(sugars)}g</li>
+          <li>나트륨 - {Math.floor(sodium)}mg</li>
+        </ul>
+      </S.ResultContainer> */}
     </S.Container>
   );
 }
@@ -81,14 +106,8 @@ const S = {
   Container: styled.div`
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
+    align-items: center;
     width: 100%;
-  `,
-
-  ResultContainer: styled.div`
-    margin-top: 80px;
-    display: flex;
-    flex-direction: column;
   `,
 
   Header: styled.header`
@@ -104,12 +123,16 @@ const S = {
     width: 20px;
   `,
 
+  MenuImage: styled.img`
+    width: 200px;
+    margin-top: -20px;
+    margin-bottom: -20px;
+  `,
+
   Title: styled.p`
     display: flex;
-    gap: 10px;
     margin: 0;
-    margin-bottom: 5px;
-    font-size: 20px;
+    font-size: 22px;
     line-height: 35px;
     word-break: keep-all;
     white-space: pre-line;
@@ -117,24 +140,74 @@ const S = {
     color: ${colors.grey900};
   `,
 
-  name: styled.p`
-    margin: 0;
-    font-size: 22px;
-    line-height: 35px;
+  Description: styled.p`
+    display: flex;
+    margin: -5px;
+    font-size: 16px;
+    line-height: 25px;
     word-break: keep-all;
     white-space: pre-line;
-    font-weight: bold;
-    color: ${colors.green100};
+    color: ${colors.grey700};
   `,
 
-  yellowName: styled.p`
+  BadgeContainer: styled.div`
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+    margin-top: 20px;
+    justify-content: flex-start;
+  `,
+
+  Badge: styled(Badge)`
+    border-radius: 20px;
+    padding: 4px 8px 4px 4px;
+    gap: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: ${colors.grey800};
+    color: ${colors.white};
+  `,
+
+  ResultContainer: styled.div`
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 70%;
+    margin-top: 40px;
+    gap: 10px;
+  `,
+
+  ResultBox: styled.div`
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+  `,
+
+  KcalInfo: styled.p`
     display: flex;
     margin: 0;
-    font-size: 22px;
+    font-size: 25px;
     line-height: 35px;
     word-break: keep-all;
     white-space: pre-line;
-    font-weight: bold;
+    font-weight: 900;
     color: ${colors.yellow100};
+
+    @font-face {
+      font-family: "Subway";
+      src: url("../assets/font/Subway.ttf") format("truetype");
+    }
+    font-family: "Subway";
+  `,
+
+  Name: styled.p`
+    display: flex;
+    margin: -5px;
+    font-size: 16px;
+    line-height: 25px;
+    word-break: keep-all;
+    white-space: pre-line;
   `,
 };

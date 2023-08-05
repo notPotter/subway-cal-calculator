@@ -1,4 +1,4 @@
-import { Food } from "./../types/types";
+import { Food, Menu } from "./../types/types";
 import { atom } from "recoil";
 
 export const menuState = atom({
@@ -10,7 +10,8 @@ export const menuState = atom({
     saturatedFat: 0,
     sugars: 0,
     sodium: 0,
-  } as Food,
+    img: "",
+  } as Menu,
 });
 
 export const breadState = atom({

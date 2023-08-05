@@ -1,3 +1,22 @@
+import Veggie from "../assets/menuImage/Veggie-Delite.png";
+import EggMayo from "../assets/menuImage/Egg-Mayo.png";
+import Ham from "../assets/menuImage/Ham.png";
+import Tuna from "../assets/menuImage/Tuna.png";
+import ChickenSlice from "../assets/menuImage/Chicken-Slice.png";
+import BLT from "../assets/menuImage/B.L.T.png";
+import ItalianBMT from "../assets/menuImage/Italian-B.M.T.png";
+import SpicyItalian from "../assets/menuImage/Spicy-Italian.png";
+import ChickenTeriyaki from "../assets/menuImage/Chicken-Teriyaki.png";
+import SubwayClub from "../assets/menuImage/Subway-Club.png";
+import RoastedChicken from "../assets/menuImage/Roasted-Chicken.png";
+import SteakAndCheese from "../assets/menuImage/Steak-&-Cheese.png";
+import SpicyShrimp from "../assets/menuImage/Spicy-Shrimp.png";
+import KBBQ from "../assets/menuImage/K-BBQ.png";
+import ChickenBaconAvocado from "../assets/menuImage/Chicken-Bacon-Avocado.png";
+import PulledPorkBarbecue from "../assets/menuImage/Pulled-Pork-Barbecue.png";
+import RotisserieBarbecueChicken from "../assets/menuImage/Rotisserie-Barbecue-Chicken.png";
+import Shrimp from "../assets/menuImage/Shrimp.png";
+
 export const BREADS = {
   WHITE: {
     name: "화이트",
@@ -57,6 +76,8 @@ export const MENUS = {
     saturatedFat: 0.6 - BREADS.WHEAT.saturatedFat,
     sugars: 7.6 - BREADS.WHEAT.sugars,
     sodium: 262 - BREADS.WHEAT.sodium,
+    img: Veggie,
+    description: "Veggie Delite",
   },
   EGG_Mayo: {
     name: "에그마요",
@@ -65,6 +86,8 @@ export const MENUS = {
     saturatedFat: 4.8 - BREADS.WHEAT.saturatedFat,
     sugars: 7.7 - BREADS.WHEAT.sugars,
     sodium: 554 - BREADS.WHEAT.sodium,
+    img: EggMayo,
+    description: "Egg Mayo",
   },
   HAM: {
     name: "햄",
@@ -73,6 +96,8 @@ export const MENUS = {
     saturatedFat: 1 - BREADS.WHEAT.saturatedFat,
     sugars: 8.4 - BREADS.WHEAT.sugars,
     sodium: 680 - BREADS.WHEAT.sodium,
+    img: Ham,
+    description: "Ham",
   },
   TUNA: {
     name: "참치",
@@ -81,6 +106,8 @@ export const MENUS = {
     saturatedFat: 1.4 - BREADS.WHEAT.saturatedFat,
     sugars: 7.6 - BREADS.WHEAT.sugars,
     sodium: 535 - BREADS.WHEAT.sodium,
+    img: Tuna,
+    description: "Tuna",
   },
   CHICKEN_SLICE: {
     name: "치킨 슬라이스",
@@ -89,6 +116,8 @@ export const MENUS = {
     saturatedFat: 0.9 - BREADS.WHEAT.saturatedFat,
     sugars: 8.7 - BREADS.WHEAT.sugars,
     sodium: 751 - BREADS.WHEAT.sodium,
+    img: ChickenSlice,
+    description: "Chicken Slice",
   },
   BLT: {
     name: "비엘티",
@@ -97,6 +126,8 @@ export const MENUS = {
     saturatedFat: 3.7 - BREADS.WHEAT.saturatedFat,
     sugars: 7.9 - BREADS.WHEAT.sugars,
     sodium: 666 - BREADS.WHEAT.sodium,
+    img: BLT,
+    description: "B.L.T.",
   },
   ITALIAN_BMT: {
     name: "이탈리안 비엠티",
@@ -105,6 +136,8 @@ export const MENUS = {
     saturatedFat: 5.9 - BREADS.WHEAT.saturatedFat,
     sugars: 8.6 - BREADS.WHEAT.sugars,
     sodium: 1064 - BREADS.WHEAT.sodium,
+    img: ItalianBMT,
+    description: "Italian B.M.T.",
   },
   SPICY_ITALIAN: {
     name: "스파이시 이탈리안",
@@ -113,6 +146,8 @@ export const MENUS = {
     saturatedFat: 9.1 - BREADS.WHEAT.saturatedFat,
     sugars: 8.7 - BREADS.WHEAT.sugars,
     sodium: 1250 - BREADS.WHEAT.sodium,
+    img: SpicyItalian,
+    description: "Spicy Italian",
   },
   CHICKEN_TERIYAKI: {
     name: "치킨 데리야끼",
@@ -121,6 +156,8 @@ export const MENUS = {
     saturatedFat: 1.2 - BREADS.WHEAT.saturatedFat,
     sugars: 10.1 - BREADS.WHEAT.sugars,
     sodium: 698 - BREADS.WHEAT.sodium,
+    img: ChickenTeriyaki,
+    description: "Chicken Teriyaki",
   },
   SUBWAY_CLUB: {
     name: "써브웨이 클럽",
@@ -129,6 +166,8 @@ export const MENUS = {
     saturatedFat: 2.4 - BREADS.WHEAT.saturatedFat,
     sugars: 8.53 - BREADS.WHEAT.sugars,
     sodium: 853 - BREADS.WHEAT.sodium,
+    img: SubwayClub,
+    description: "Subway Club",
   },
   PULLED_PORK_BARBECUE: {
     name: "풀드 포크 바비큐",
@@ -137,6 +176,8 @@ export const MENUS = {
     saturatedFat: 2.1 - BREADS.WHEAT.saturatedFat,
     sugars: 7.8 - BREADS.WHEAT.sugars,
     sodium: 689 - BREADS.WHEAT.sodium,
+    img: PulledPorkBarbecue,
+    description: "Pulled Pork Barbecue",
   },
   K_BBQ: {
     name: "K-바비큐",
@@ -145,6 +186,8 @@ export const MENUS = {
     saturatedFat: 2.1 - BREADS.WHEAT.saturatedFat,
     sugars: 14.7 - BREADS.WHEAT.sugars,
     sodium: 899 - BREADS.WHEAT.sodium,
+    img: KBBQ,
+    description: "K-BBQ.",
   },
   ROTISSERIE_BARBECUE_CHICKEN: {
     name: "로티세리 바비큐 치킨",
@@ -153,6 +196,8 @@ export const MENUS = {
     saturatedFat: 2.5 - BREADS.WHEAT.saturatedFat,
     sugars: 7.8 - BREADS.WHEAT.sugars,
     sodium: 542 - BREADS.WHEAT.sodium,
+    img: RotisserieBarbecueChicken,
+    description: "Rotisserie Barbecue Chicken",
   },
   ROASTED_CHICKEN: {
     name: "로스트 치킨",
@@ -161,6 +206,8 @@ export const MENUS = {
     saturatedFat: 1.3 - BREADS.WHEAT.saturatedFat,
     sugars: 8.7 - BREADS.WHEAT.sugars,
     sodium: 605 - BREADS.WHEAT.sodium,
+    img: RoastedChicken,
+    description: "Roasted Chicken",
   },
   CHICKEN_BACON_AVOCADO: {
     name: "치킨 베이컨 아보카도",
@@ -169,6 +216,8 @@ export const MENUS = {
     saturatedFat: 3.2 - BREADS.WHEAT.saturatedFat,
     sugars: 9.0 - BREADS.WHEAT.sugars,
     sodium: 940 - BREADS.WHEAT.sodium,
+    img: ChickenBaconAvocado,
+    description: "Chicken Bacon Avocado",
   },
   STEAK_AND_CHEESE: {
     name: "스테이크 & 치즈",
@@ -177,6 +226,8 @@ export const MENUS = {
     saturatedFat: 4.2 - BREADS.WHEAT.saturatedFat,
     sugars: 8.8 - BREADS.WHEAT.sugars,
     sodium: 780 - BREADS.WHEAT.sodium,
+    img: SteakAndCheese,
+    description: "Steak & Cheese",
   },
   NEW_SPICY_SHRIMP: {
     name: "뉴 스파이시 쉬림프",
@@ -185,6 +236,8 @@ export const MENUS = {
     saturatedFat: 0.9 - BREADS.WHEAT.saturatedFat,
     sugars: 9.1 - BREADS.WHEAT.sugars,
     sodium: 570 - BREADS.WHEAT.sodium,
+    img: SpicyShrimp,
+    description: "New Spicy Shrimp",
   },
   NEW_SHRIMP: {
     name: "뉴 쉬림프",
@@ -193,6 +246,8 @@ export const MENUS = {
     saturatedFat: 0.6 - BREADS.WHEAT.saturatedFat,
     sugars: 7.9 - BREADS.WHEAT.sugars,
     sodium: 415 - BREADS.WHEAT.sodium,
+    img: Shrimp,
+    description: "New Shrimp",
   },
 };
 
