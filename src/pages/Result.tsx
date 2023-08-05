@@ -88,16 +88,6 @@ export function Result() {
           <S.KcalInfo>{Math.floor(sodium)}mg</S.KcalInfo>
         </S.ResultBox>
       </S.ResultContainer>
-
-      {/* <S.ResultContainer>
-        <S.Title>칼로리 - {Math.floor(kcal)}kcal</S.Title>
-        <ul>
-          <li>단백질 - {Math.floor(protein)}g</li>
-          <li>포화지방 - {Math.floor(saturatedFat)}g</li>
-          <li>당류 - {Math.floor(sugars)}g</li>
-          <li>나트륨 - {Math.floor(sodium)}mg</li>
-        </ul>
-      </S.ResultContainer> */}
     </S.Container>
   );
 }
@@ -125,8 +115,7 @@ const S = {
 
   MenuImage: styled.img`
     width: 200px;
-    margin-top: -20px;
-    margin-bottom: -20px;
+    margin-bottom: -10px;
   `,
 
   Title: styled.p`
