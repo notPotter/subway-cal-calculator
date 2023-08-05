@@ -1,0 +1,16 @@
+{
+  "short_name": "Subway-calculator",
+  "name": "서브웨이 칼로리 계산기",
+  "icons": [
+    {
+      "src": "logo.png",
+      "type": "image/png",
+      "sizes": "700x700"
+    }
+  ],
+  "id": "/subway-cal-calculator/",
+  "start_url": "/subway-cal-calculator/",
+  "display": "standalone",
+  "theme_color": "#000000",
+  "background_color": "#ffffff"
+}
