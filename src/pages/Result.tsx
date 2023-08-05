@@ -115,6 +115,7 @@ const S = {
 
   MenuImage: styled.img`
     width: 200px;
+    margin-top: 20px;
     margin-bottom: -10px;
   `,
 
@@ -143,7 +144,7 @@ const S = {
     display: flex;
     flex-wrap: wrap;
     gap: 5px;
-    margin-top: 20px;
+    margin-top: 40px;
     justify-content: flex-start;
   `,
 
